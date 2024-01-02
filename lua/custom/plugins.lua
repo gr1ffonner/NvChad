@@ -9,8 +9,13 @@ local plugins = {
         "mypy",
         "ruff",
         "pyright",
+        "gopls",
       },
     },
+  },
+  {
+    'Exafunction/codeium.vim',
+    event = 'BufEnter'
   },
   {
     "jose-elias-alvarez/null-ls.nvim",
@@ -32,6 +37,24 @@ local plugins = {
     init = function ()
       vim.g.rustfmt_autosave = 1
     end
+  },
+  {
+    "jose-elias-alvarez/null-ls.nvim",
+    ft = "go",
+    opts = function()
+      return require "custom.configs.null-ls"
+    end,
+  },
+  {
+    "olexsmir/gopher.nvim",
+    ft = "go",
+    config = function(_, opts)
+      require("gopher").setup(opts)
+      require("core.utils").load_mappings("gopher")
+    end,
+    build = function()
+      vim.cmd [[silent! GoInstallDeps]]
+    end,
   },
 }
 
