@@ -15,7 +15,10 @@ local plugins = {
   },
   {
     'Exafunction/codeium.vim',
-    event = 'BufEnter'
+    event = 'BufEnter',
+    config = function ()
+      vim.keymap.set('i', '<M-/>', function () return vim.fn['codeium#Accept']() end, { expr = true, silent = true })
+    end
   },
   {
     "jose-elias-alvarez/null-ls.nvim",
