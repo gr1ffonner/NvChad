@@ -5,6 +5,15 @@ local lspconfig = require("lspconfig")
 local util = require "lspconfig/util"
 
 
+
+
+lspconfig.bashls.setup({
+  on_attach = on_attach,
+  capabilities = capabilities,
+  filetypes = {"sh"},
+})
+
+
 lspconfig.pyright.setup({
   on_attach = on_attach,
   capabilities = capabilities,

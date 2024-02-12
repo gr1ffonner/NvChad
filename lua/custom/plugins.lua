@@ -10,6 +10,8 @@ local plugins = {
         "ruff",
         "pyright",
         "gopls",
+        "bash-language-server",
+        "lua-language-server",
       },
     },
   },
