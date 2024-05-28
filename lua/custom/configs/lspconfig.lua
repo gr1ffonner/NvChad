@@ -4,8 +4,17 @@ local capabilities = require("plugins.configs.lspconfig").capabilities
 local lspconfig = require("lspconfig")
 local util = require "lspconfig/util"
 
+lspconfig.quick_lint_js.setup({
+  on_attach = on_attach,
+  capabilities = capabilities,
+  filetypes = {"javascript", "javascriptreact", "json"}
+})
 
 
+lspconfig.bufls.setup({
+  on_attach = on_attach,
+  capabilities = capabilities,
+})
 
 lspconfig.bashls.setup({
   on_attach = on_attach,
