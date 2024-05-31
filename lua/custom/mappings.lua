@@ -11,7 +11,8 @@ M.disabled = {
 M.abc = {
   n = {
     ["<leader>o"] = { "<cmd> NvimTreeToggle <CR>", "Toggle nvimtree" },
-    ["<leader>i"] = { "<cmd> w <CR>", "Save file" },
+    ["<leader>i"] = { "<cmd> wa <CR>", "Save file" },
+    ["<leader>I"] = { "<cmd> 1,$bd! <CR>", "Delete all buffers" },
   }
 }
 
